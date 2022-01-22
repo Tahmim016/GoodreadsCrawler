@@ -9,7 +9,7 @@ class ScrapeQuotes(scrapy.Spider):
     ]
     
     def parse(self, response):
-        #extracting details
+        #extracting details using css selector
         for item in response.css('.quote'):
 
             quote = item.css('.quoteText::text').get()
